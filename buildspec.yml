@@ -7,12 +7,12 @@ phases:
   build:
     commands:
       - echo "Building Go binary..."
-      - cd src/go
+      - cd src
       - go build -o my-app main.go
       - cd ..
   post_build:
     commands:
-      - zip -r src/sample.zip src/go/my-app
+      - zip -r src/sample.zip src/my-app
       - ls -l src
       - echo "Build finished."
 
