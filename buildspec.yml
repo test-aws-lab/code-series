@@ -7,18 +7,14 @@ phases:
   build:
     commands:
       - echo "Building Go binary..."
-      # go フォルダに移動してビルドし、バイナリをルートに出力します
       - cd go
       - go build -o ../my-app main.go
       - cd ..
   post_build:
     commands:
+      - zip -r sample.zip appspec.yml my-app script/
       - echo "Build finished."
 
 artifacts:
-  # ルートを基準に、デプロイに必要なものだけをピックアップして zip に入れます
   files:
-    - appspec.yml
-    - my-app
-    - script/**/*
-  name: sample.zip
+      - sample.zip
