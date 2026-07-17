@@ -7,18 +7,19 @@ phases:
   build:
     commands:
       - echo "Building Go binary..."
-      - cd src
+      - cd src/go
       - go build -o my-app main.go
       - cd ..
   post_build:
     commands:
-      # - zip -r src/sample.zip src
+      - zip -r src/sample.zip src/go/my-app src/script
       - ls -l src
       - echo "Build finished."
 
 artifacts:
   type: zip
   files:
-    - '**/*'
+    - sample.zip
+    - appspec.yml
   base-directory: src
   name: sample.zip
