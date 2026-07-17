@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Building Go binary..."
       - cd src
-      - go build -o ../my-app main.go
+      - go build -o my-app main.go
   post_build:
     commands:
       - zip -r sample.zip appspec.yml my-app script/
