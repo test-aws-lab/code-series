@@ -11,7 +11,10 @@ phases:
       - go build -o my-app main.go
   post_build:
     commands:
-      - zip -r sample.zip ../appspec.yml my-app script/
+      # 1つ上にある appspec.yml を、今いる src ディレクトリ内にコピーする
+      - cp ../appspec.yml .
+      # コピーしてきたので、すべて「直下のファイル」としてzipにまとめられる
+      - zip -r sample.zip appspec.yml my-app script/
       - echo "Build finished."
 
 artifacts:
