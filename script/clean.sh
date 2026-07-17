@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Apacheの停止
-sudo systemctl stop httpd
-
 # 動いている my-app プロセスがあれば終了させる
 pkill -f /opt/my-app/my-app || true
 
