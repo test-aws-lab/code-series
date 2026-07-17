@@ -1,15 +1,15 @@
 version: 0.0
 os: linux
 files:
-  - source: src/my-app
+  - source: my-app
     destination: /opt/my-app/
 hooks:
   BeforeInstall:
-    - location: src/script/clean.sh  # ★ src/ を追加！
+    - location: script/clean.sh  # ★ src/ を追加！
       timeout: 300
       runas: root
   ApplicationStart:
-    - location: src/script/start.sh  # ★ src/ を追加！
+    - location: script/start.sh  # ★ src/ を追加！
       timeout: 300
       runas: root
 
