@@ -21,6 +21,6 @@ artifacts:
   files:
     - sample.zip
     - appspec.yml
-    - script
+    - script/**/*
   base-directory: src
   name: sample.zip
