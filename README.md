@@ -1,1 +1,1 @@
-# code-series-go
+# code-series
