@@ -29,7 +29,7 @@
       );
     ?>
 
-<h2 class="text-center mt-3 mb-5">CloudOps Lab Codeシリーズのテスト</h2>
+<h2 class="text-center mt-3 mb-5">CloudOps Lab CodePipelineのテスト</h2>
 
     <div class="container">
       <?php foreach ($posts as $post) : ?>
