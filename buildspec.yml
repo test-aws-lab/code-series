@@ -12,13 +12,13 @@ phases:
       - cd ..
   post_build:
     commands:
-      - zip -r src/sample.zip src/my-app
+      - zip -r src/sample.zip src
       - ls -l
       - echo "Build finished."
 
 artifacts:
   type: zip
   files:
-    - '**/*'
+    - sample.zip
   base-directory: src
   name: sample.zip
