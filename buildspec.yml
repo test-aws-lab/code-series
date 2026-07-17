@@ -9,15 +9,13 @@ phases:
       - echo "Building Go binary..."
       - cd src
       - go build -o my-app main.go
-      - cd .. # ★一度ルートに戻る
   post_build:
     commands:
+      - zip -r sample.zip src
       - echo "Build finished."
 
 artifacts:
-  name: sample.zip
-  # zipコマンドを使わずに、生のファイルをそのまま指定してCodeBuildにまとめさせる
   files:
-    - appspec.yml
-    - src/my-app
-    - src/script/**/*
+    - '**/*'
+  base-directory: src
+  name: sample.zip
