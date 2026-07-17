@@ -18,6 +18,6 @@ phases:
 artifacts:
   type: zip
   files:
-    - **/*
+    - '**/*'
   base-directory: src
   name: sample.zip
