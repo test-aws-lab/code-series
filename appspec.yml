@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source: my-app
+    destination: /opt/my-app/
+hooks:
+  BeforeInstall:
+    - location: script/clean.sh
+      runas: root
+  ApplicationStart:
+    - location: script/start.sh
+      runas: root
+
+# Linux上でGoバイナリを実行できるように権限(755)を与える設定
+permissions:
+  - object: /opt/my-app/my-app
+    pattern: "**"
+    owner: root
+    group: root
+    mode: 755
+    type:
+      - file
