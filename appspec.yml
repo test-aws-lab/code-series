@@ -5,10 +5,12 @@ files:
     destination: /opt/my-app/
 hooks:
   BeforeInstall:
-    - location: script/clean.sh
+    - location: src/script/clean.sh  # ★ src/ を追加！
+      timeout: 300
       runas: root
   ApplicationStart:
-    - location: script/start.sh
+    - location: src/script/start.sh  # ★ src/ を追加！
+      timeout: 300
       runas: root
 
 # Linux上でGoバイナリを実行できるように権限(755)を与える設定
