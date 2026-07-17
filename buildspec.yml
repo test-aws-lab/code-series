@@ -9,6 +9,7 @@ phases:
       - echo "Building Go binary..."
       - cd src
       - go build -o my-app main.go
+      - cd ..
   post_build:
     commands:
       - zip -r sample.zip src
