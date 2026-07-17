@@ -9,15 +9,14 @@ phases:
       - echo "Building Go binary..."
       - cd src
       - go build -o my-app main.go
+      - cd .. # ★一度ルートに戻る
   post_build:
     commands:
-      # 1つ上にある appspec.yml を、今いる src ディレクトリ内にコピーする
-      - cp ../appspec.yml .
-      # コピーしてきたので、すべて「直下のファイル」としてzipにまとめられる
-      - zip -r sample.zip appspec.yml my-app script/
       - echo "Build finished."
 
 artifacts:
-  base-directory: src
+  # zipコマンドを使わずに、生のファイルをそのまま指定してCodeBuildにまとめさせる
   files:
-    - sample.zip
+    - appspec.yml
+    - src/my-app
+    - src/script/**/*
