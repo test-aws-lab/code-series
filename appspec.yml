@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: my-app
+  - source: src/my-app
     destination: /opt/my-app/
 hooks:
   BeforeInstall:
