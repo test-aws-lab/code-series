@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - ls -l src
-      - echo "Build finished."
+      - echo "Build finished"
 
 artifacts:
   type: zip
